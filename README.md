@@ -33,7 +33,7 @@ Features:\
   App displays beer descriptions: categories, \
   App displays descriptors 
   User profile creation\
-  User can provide list of beer types, brands, etc., that they've tasted before\
+  User can provide list of beer types, brands, etc., that they've tasted before
 
 ## Credits
 
