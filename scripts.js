@@ -108,5 +108,52 @@
         //     $('#unorderedList').append('<li>New LIst Item</li>');
         // });
 
+        // example:
+        // https://api.openbrewerydb.org/breweries?by_state=Virginia&dog-friendly&per_page=15
 
+
+//         [on page load / refresh: page empties previous entries]
+// user inputs brand (text area)
+// user selects state from drop-down list (<select> tag)
+// OR user clicks 'near me' button (<button> tag)
+// user clicks search icon (<input type = "submit">)
+// on search icon click, ajax call to request openbrewery api data by user state using get method (number of search items returns??)
+// OR on search icon click, ajax call to request openbrewery api data by 'near me' geolocation using get method (number of search items returns??)
+// if user deletes previous search text > enters new search criteria (brand AND state) > clicks search icon > previous search results are cleared ( .empty( ); ) > ajax call is again executed > new data replaces previous search..........(option 1)
+// OR if user deletes previous search text > enters new search criteria (brand AND 'near me') > clicks search icon > previous search results are cleared ( .empty( ); ) > ajax call is again executed > new data replaces previous search..........(option 2)
+
+// OR if either option 1 or option 2 occurs > new data is APPENDED (OR PREPENDED)
+
+// if user deletes previous search text > enters new search criteria ( brand AND state -OR- brand AND 'near me' ) > clicks search icon > previous search results are cleared ( .empty( ); ) > ajax call is again executed > new variables created to store: brewery name, brewery address, brewery rating, state name, state logo?? > variable created to store new browser element created via jQuery with .text( ) property containing respective ajax call result > newly created browser element with appended text from ajax attached to existing browser element (e.g., .append( ) or .prepend( ) )
+// also, during our meeting tomorrow (in class), i want to discuss a potential addition to the app, since we're having to pivot slightly anyway.
+
+
+        // openbrewery: https://api.openbrewerydb.org/breweries
         
+        var apiKey;
+
+        var 
+
+        var queryURL = "https://api.openbrewerydb.org/breweries?" ;
+
+        $.ajax({
+            url: queryURL,
+            method: 'GET',
+        }).then( function (response) {
+            console.log( response );
+
+            var responseDiv = $('<div class="responseContainer">');
+            
+            var responseDivName = $('<div class="breweryName">');
+
+            var responseDivAddress = $('<div class="breweryAddress">');
+
+            var responseDivRating = $('<div class="breweryRating">');
+
+            var responseDivStateName = $('<div class="stateName">');
+
+            var responseDivStateLogo = $('<div class="stateLogo">');
+
+
+
+        })
