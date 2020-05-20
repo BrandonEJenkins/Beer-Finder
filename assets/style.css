@@ -1,7 +1,6 @@
 .container-grid {
   max-width: 1000px;
   margin: auto;
-  padding: 50px;
 }
 .logo-area {
   background-color: orange;
@@ -9,4 +8,8 @@
 
 .footer {
   background-color: orange;
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
+  width: 100%;
 }
