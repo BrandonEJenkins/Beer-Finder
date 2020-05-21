@@ -14,44 +14,69 @@
     />
   </head>
   <body>
-    <div class="container-grid">
+    <header class="grid-container fluid">
       <div class="grid-y logo-area" style="height: 200px;">
         <div class="test">test</div>
-      </div>
+      </header>
 
-      <div class="search">Search Bars</div>
-
-      <div class="grid-x grid-margin-x" style="height: 350px;">
-        <div class="cell small-6 medium-8">
-          <div class="card" style="width: 250px;">
-            <div class="card-divider" id="beer-info">
-              <h4>Karbach Brewing Co.</h4>
-            </div>
-            <div class="card-section">
-              <h5>Located at:</h5>
-              <div>2032 Karbach Street</div>
-              <div>Houston, Tx 77092</div>
-              <h6>visit site</h6>
-            </div>
-          </div>
-        </div>
-        <div style="width: 200px;">
-          <div id="state-info">
-            <h5 style="margin-right: auto; margin-left: auto;">Texas</h5>
-          </div>
-          <img
-            style="
-              width: 150px;
-              height: 150px;
-              margin-left: auto;
-              margin-right: auto;
-              padding: 2px;
-            "
-          />
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <ul class="menu">
+            <li><input type="search" placeholder="Search By Brand"></li>
+            <li><button type="button" class="button">Search</button></li>
+            <li><button type="button" class="button nearme-btn">Near Me</button></li>
+             <li><button type="button" class="button state-btn">By State</button></li>
+          </ul>
         </div>
       </div>
 
-      <div class="grid-y footer" style="height: 100px;">Footer</div>
+      <div class="grid-container fluid results-section">
+        <div class="grid-x grid-margin-x" style="height: 350px;">
+          <div class="cell small-6 medium-8">
+            <div class="card" style="width: 250px;">
+              <div class="card-divider" id="beer-info">
+                <h4>Karbach Brewing Co.</h4>
+              </div>
+              <div class="card-section">
+                <h5>Located at:</h5>
+                <div>2032 Karbach Street</div>
+                <div>Houston, Tx 77092</div>
+                <h6>visit site</h6>
+              </div>
+            </div>
+          </div>
+          <div style="width: 200px;">
+            <div id="state-info">
+              <h5
+                style="
+                  margin-right: auto;
+                  margin-left: auto;
+                  text-align: center;
+                "
+              >
+                Texas
+              </h5>
+            </div>
+            <img
+              style="
+                width: 150px;
+                height: 150px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 2px;
+              "
+            />
+          </div>
+        </div>
+      </div>
+
+      <footer class="grid-container fluid">
+        <div class="grid-y" style="height: 150px;">
+          <div class="columns">
+            <p>©All Rights Reserved</p>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

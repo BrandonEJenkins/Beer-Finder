@@ -1,15 +1,16 @@
-.container-grid {
-  max-width: 1000px;
-  margin: auto;
-}
-.logo-area {
+header {
   background-color: orange;
 }
 
-.footer {
+footer {
   background-color: orange;
-  position: absolute;
-  bottom: 0;
-  height: 2.5rem;
-  width: 100%;
+}
+
+.results-section {
+  background-color: green;
+}
+
+.nearme-btn,
+.state-btn {
+  margin-right: 16px;
 }
