@@ -37,4 +37,8 @@ Features:\
 
 ## Credits
 
+## Sources
+* https://learn.jquery.com/using-jquery-core/faq/how-do-i-get-the-text-value-of-a-selected-option/
+
+
 ## License

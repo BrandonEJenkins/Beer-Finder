@@ -62,29 +62,29 @@
         
         
         
-        $('button').click(function() {
+        // $('button').click(function() {
 
-            var userSearch = $('#userSearch').val()
-            var sort = "type";
-            if(userSearch === "") {
-                userSearch = "Houston"
-            }
+        //     var userSearch = $('#userSearch').val()
+        //     var sort = "type";
+        //     if(userSearch === "") {
+        //         userSearch = "Houston"
+        //     }
 
-            var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + userSearch + "&sort=-" + sort;
+        //     var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + userSearch + "&sort=-" + sort;
 
-            $('#unorderedList').empty();
+        //     $('#unorderedList').empty();
 
-        $.ajax({
-            url: queryURL,
-            method: 'GET'
-        }).then(function(response) {
-            console.log(response);
-            for (i = 0; i < response.length; i++) {
+        // $.ajax({
+        //     url: queryURL,
+        //     method: 'GET'
+        // }).then(function(response) {
+        //     console.log(response);
+        //     for (i = 0; i < response.length; i++) {
                 
-                $('#unorderedList').append('<li>' + JSON.stringify(response[i].name) + '</li>');
-            }
-                });
-        });
+        //         $('#unorderedList').append('<li>' + JSON.stringify(response[i].name) + '</li>');
+        //     }
+        //         });
+        // });
 
 
         
@@ -120,7 +120,11 @@
 // on search icon click, ajax call to request openbrewery api data by user state using get method (number of search items returns??)
 // OR on search icon click, ajax call to request openbrewery api data by 'near me' geolocation using get method (number of search items returns??)
 // if user deletes previous search text > enters new search criteria (brand AND state) > clicks search icon > previous search results are cleared ( .empty( ); ) > ajax call is again executed > new data replaces previous search..........(option 1)
+
 // OR if user deletes previous search text > enters new search criteria (brand AND 'near me') > clicks search icon > previous search results are cleared ( .empty( ); ) > ajax call is again executed > new data replaces previous search..........(option 2)
+        // CLARIFICATION: the purpose of the 'near me' button is to drill down from the state level (e.g., user selects state from drop down > user inputs brand / brewery name > user clicks search icon > ajax call(s) triggered and returns breweries in state ajax call )
+
+        // 'near me' button will be boolean; if 'near me' clicked, then true; if 'near me' NOT clicked, then false
 
 // OR if either option 1 or option 2 occurs > new data is APPENDED (OR PREPENDED)
 
@@ -130,30 +134,71 @@
 
         // openbrewery: https://api.openbrewerydb.org/breweries
         
-        var apiKey;
+$( document ).ready( function () {
 
-        var 
+    var userBrandSearchInput;
 
-        var queryURL = "https://api.openbrewerydb.org/breweries?" ;
+    var userStateDropdownSelection;
 
-        $.ajax({
-            url: queryURL,
-            method: 'GET',
-        }).then( function (response) {
-            console.log( response );
+    var userBrandLocalStorage = window.localStorage.getItem("userBrandSearchInput");
 
-            var responseDiv = $('<div class="responseContainer">');
-            
-            var responseDivName = $('<div class="breweryName">');
+    var userStateLocalStorage = window.localStorage.getItem("userStateDropdownSelection");
 
-            var responseDivAddress = $('<div class="breweryAddress">');
+    userBrandSearchInput = userBrandLocalStorage;
+    userStateDropdownSelection = userStateLocalStorage;
 
-            var responseDivRating = $('<div class="breweryRating">');
+    getbreweryDetails();
 
-            var responseDivStateName = $('<div class="stateName">');
+    $('#searchButton').on('click', function(event) {
 
-            var responseDivStateLogo = $('<div class="stateLogo">');
+        event.preventDefault();
+
+        // Clear previous search results but have background image in lower two-thirds of page that is visible when search is cleared or has not yet been executed
+        $('.responseContainer').empty();
+
+        // Get user brand input text from form
+        userBrandSearchInput = $('#userBrandSearchInput').val();
+
+        // Get user state from drop-down selection
+        userStateDropdownSelection = $('#userStateDropdownSelection').val();
+
+        getbreweryDetails();
+
+    });
+
+function getbreweryDetails() {
+
+    var apiKey;
+
+    // Declare variable to store openbrewerydb url by state based on user input and sorted by brewery name with a limit of 25 search results per call
+    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + userStateDropdownSelection + "&sort=+name&per_page=25";
+
+    $.ajax({
+        url: queryURL,
+        method: 'GET',
+    }).then( function (response) {
+        console.log( response );
+
+        // Create variables to store ajax call results in separate div's based on layout image
+        var responseDiv = $('<div class="responseContainer">');
+        
+        var responseDivName = $('<div class="breweryName">');
+
+        var responseDivAddress = $('<div class="breweryAddress">');
+
+        var responseDivRating = $('<div class="breweryRating">');
+
+        var responseDivStateName = $('<div class="stateName">');
+
+        var responseDivStateLogo = $('<div class="stateLogo">');
+
+        // Create variables to store results of ajax call
 
 
+    })
 
-        })
+}
+
+})
+
+        
