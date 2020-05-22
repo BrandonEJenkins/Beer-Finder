@@ -1,16 +1,34 @@
 header {
-  background-color: orange;
+  background-color: #01785b;
 }
 
 footer {
-  background-color: orange;
+  background-color: #01785b;
+  bottom: 0;
+  text-align: center;
 }
 
 .results-section {
-  background-color: green;
+  background-color: #f1faee;
 }
 
 .nearme-btn,
 .state-btn {
-  margin-right: 16px;
+  margin-left: 16px;
+  background-color: #00a896;
+  color: #f1faee;
+}
+.brand-btn {
+  background-color: #00a896;
+  color: #f1faee;
+}
+.brand-btn:hover,
+.nearme-btn:hover,
+.state-btn:hover {
+  background-color: #02c39a;
+  color: #f1faee;
+}
+
+i {
+  font-size: 14px;
 }
