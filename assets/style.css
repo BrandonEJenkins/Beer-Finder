@@ -17,6 +17,12 @@ footer {
 .results-section {
   background-color: #f1faee;
 }
+h4,
+h5,
+.card {
+  border-radius: 4px;
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+}
 
 .input-area,
 .nearme-btn,
