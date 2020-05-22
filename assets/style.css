@@ -4,8 +4,10 @@ header {
 
 footer {
   background-color: #01785b;
+  color: #f1faee;
   bottom: 0;
   text-align: center;
+  padding-top: 25px;
 }
 
 .results-section {
@@ -27,6 +29,13 @@ footer {
 .state-btn:hover {
   background-color: #02c39a;
   color: #f1faee;
+  border-color: black;
+}
+
+.brand-btn:focus,
+.nearme-btn:focus,
+.state-btn:focus {
+  background-color: #02c39a;
 }
 
 i {
