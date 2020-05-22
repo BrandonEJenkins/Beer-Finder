@@ -134,71 +134,96 @@
 
         // openbrewery: https://api.openbrewerydb.org/breweries
         
-$( document ).ready( function () {
+// $( document ).ready( function () {
 
-    var userBrandSearchInput;
+//     var userBrandSearchInput;
 
-    var userStateDropdownSelection;
+//     var userStateDropdownSelection;
 
-    var userBrandLocalStorage = window.localStorage.getItem("userBrandSearchInput");
+//     var userBrandLocalStorage = window.localStorage.getItem("userBrandSearchInput");
 
-    var userStateLocalStorage = window.localStorage.getItem("userStateDropdownSelection");
+//     var userStateLocalStorage = window.localStorage.getItem("userStateDropdownSelection");
 
-    userBrandSearchInput = userBrandLocalStorage;
-    userStateDropdownSelection = userStateLocalStorage;
+//     userBrandSearchInput = userBrandLocalStorage;
+//     userStateDropdownSelection = userStateLocalStorage;
 
-    getbreweryDetails();
+//     getbreweryDetails();
 
-    $('#searchButton').on('click', function(event) {
+//     $('#searchButton').on('click', function(event) {
 
-        event.preventDefault();
+//         event.preventDefault();
 
-        // Clear previous search results but have background image in lower two-thirds of page that is visible when search is cleared or has not yet been executed
-        $('.responseContainer').empty();
+//         // Clear previous search results but have background image in lower two-thirds of page that is visible when search is cleared or has not yet been executed
+//         $('.responseContainer').empty();
 
-        // Get user brand input text from form
-        userBrandSearchInput = $('#userBrandSearchInput').val();
+//         // Get user brand input text from form
+//         userBrandSearchInput = $('#userBrandSearchInput').val();
 
-        // Get user state from drop-down selection
-        userStateDropdownSelection = $('#userStateDropdownSelection').val();
+//         // Get user state from drop-down selection
+//         userStateDropdownSelection = $('#userStateDropdownSelection').val();
 
-        getbreweryDetails();
+//         getbreweryDetails();
 
-    });
+//     });
 
-function getbreweryDetails() {
+// function getbreweryDetails() {
 
-    var apiKey;
+//     var apiKey;
 
-    // Declare variable to store openbrewerydb url by state based on user input and sorted by brewery name with a limit of 25 search results per call
-    var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + userStateDropdownSelection + "&sort=+name&per_page=25";
+//     // Declare variable to store openbrewerydb url by state based on user input and sorted by brewery name with a limit of 25 search results per call
+//     var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + userStateDropdownSelection + "&sort=+name&per_page=25";
 
-    $.ajax({
-        url: queryURL,
-        method: 'GET',
-    }).then( function (response) {
-        console.log( response );
+//     $.ajax({
+//         url: queryURL,
+//         method: 'GET',
+//     }).then( function (response) {
+//         console.log( response );
 
-        // Create variables to store ajax call results in separate div's based on layout image
-        var responseDiv = $('<div class="responseContainer">');
+//         // Create variables to store ajax call results in separate div's based on layout image
+//         var responseDiv = $('<div class="responseContainer">');
         
-        var responseDivName = $('<div class="breweryName">');
+//         var responseDivName = $('<div class="breweryName">');
 
-        var responseDivAddress = $('<div class="breweryAddress">');
+//         var responseDivAddress = $('<div class="breweryAddress">');
 
-        var responseDivRating = $('<div class="breweryRating">');
+//         var responseDivRating = $('<div class="breweryRating">');
 
-        var responseDivStateName = $('<div class="stateName">');
+//         var responseDivStateName = $('<div class="stateName">');
 
-        var responseDivStateLogo = $('<div class="stateLogo">');
+//         var responseDivStateLogo = $('<div class="stateLogo">');
 
-        // Create variables to store results of ajax call
+//         // Create variables to store results of ajax call
 
+//     })
 
-    })
+// }
 
+// })
+
+$('.searchButton').on('click', function (event) {
+
+    event.preventDefault();
+    console.log('i was clicked');
+
+var userStateDropdownSelection = $('#inputState').val();
+
+var states = {"AL " : " Alabama","AK " : " Alaska","AZ " : " Arizona","AR " : " Arkansas","CA " : " California","CO " : " Colorado","CT " : " Connecticut","DE " : " Delaware","DC " : " District of Columbia","FL " : " Florida","GA " : " Georgia","HI " : " Hawaii","ID " : " Idaho","IL " : " Illinois","IN " : " Indiana","IA " : " Iowa","KS " : " Kansas","KY " : " Kentucky","LA " : " Louisiana","ME " : " Maine","MD " : " Maryland","MA " : " Massachusetts","MI " : " Michigan","MN " : " Minnesota","MS " : " Mississippi","MO " : " Missouri","MT " : " Montana","NE " : " Nebraska","NV " : " Nevada","NH " : " New Hampshire","NJ " : " New Jersey","NM " : " New Mexico","NY " : " New York","NC " : " North Carolina","ND " : " North Dakota","OH " : " Ohio","OK " : " Oklahoma","OR " : " Oregon","PA " : " Pennsylvania","RI " : " Rhode Island","SC " : " South Carolina","SD " : " South Dakota","TN " : " Tennessee","TX " : " Texas","UT " : " Utah","VT " : " Vermont","VA " : " Virginia","WA " : " Washington","WV " : " West Virginia","WI " : " Wisconsin","WY " : " Wyoming" };
+
+var getStateFullName = function (stateAbbr) {
+    return states[stateAbbr];
 }
 
-})
+var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + userStateDropdownSelection + "&sort=+name&per_page=25";
 
-        
+$.ajax({
+    url: queryURL,
+    method: 'GET',
+}).then(function (response) {
+
+    console.group('Inside AJAX');
+    console.log('ya got me');
+    console.log('State selected: ' + userStateDropdownSelection);
+    console.groupEnd();
+
+    })
+});

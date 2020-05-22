@@ -39,6 +39,9 @@ Features:\
 
 ## Sources
 * https://learn.jquery.com/using-jquery-core/faq/how-do-i-get-the-text-value-of-a-selected-option/
+* https://github.com/Microsoft/vscode/issues/38380
+* https://stackoverflow.com/questions/46539714/select-all-occurrences-of-selected-word-in-vscode
+* https://stackoverflow.com/questions/33790210/get-a-state-name-from-abbreviation
 
 
 ## License
