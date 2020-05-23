@@ -205,15 +205,24 @@ $('.searchButton').on('click', function (event) {
     event.preventDefault();
     console.log('i was clicked');
 
-var userStateDropdownSelection = $('#inputState').val();
+var userStateDropdownSelection = $('#inputState option:selected').text();
 
-var states = {"AL " : " Alabama","AK " : " Alaska","AZ " : " Arizona","AR " : " Arkansas","CA " : " California","CO " : " Colorado","CT " : " Connecticut","DE " : " Delaware","DC " : " District of Columbia","FL " : " Florida","GA " : " Georgia","HI " : " Hawaii","ID " : " Idaho","IL " : " Illinois","IN " : " Indiana","IA " : " Iowa","KS " : " Kansas","KY " : " Kentucky","LA " : " Louisiana","ME " : " Maine","MD " : " Maryland","MA " : " Massachusetts","MI " : " Michigan","MN " : " Minnesota","MS " : " Mississippi","MO " : " Missouri","MT " : " Montana","NE " : " Nebraska","NV " : " Nevada","NH " : " New Hampshire","NJ " : " New Jersey","NM " : " New Mexico","NY " : " New York","NC " : " North Carolina","ND " : " North Dakota","OH " : " Ohio","OK " : " Oklahoma","OR " : " Oregon","PA " : " Pennsylvania","RI " : " Rhode Island","SC " : " South Carolina","SD " : " South Dakota","TN " : " Tennessee","TX " : " Texas","UT " : " Utah","VT " : " Vermont","VA " : " Virginia","WA " : " Washington","WV " : " West Virginia","WI " : " Wisconsin","WY " : " Wyoming" };
+var userBrandSearchInput = $('#brandSearchInput').val();
 
-var getStateFullName = function (stateAbbr) {
-    return states[stateAbbr];
-}
+// var states = {"AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"DistrictofColumbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"NewHampshire","NJ":"NewJersey","NM":"NewMexico","NY":"NewYork","NC":"NorthCarolina","ND":"NorthDakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"RhodeIsland","SC":"SouthCarolina","SD":"SouthDakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"WestVirginia","WI":"Wisconsin","WY":"Wyoming"};
 
-var queryURL = "https://api.openbrewerydb.org/breweries?by_state=" + userStateDropdownSelection + "&sort=+name&per_page=25";
+var states = {"Alabama":"AL","Alaska":"AK","Arizona":"AZ","Arkansas":"AR","California":"CA","Colorado":"CO","Connecticut":"CT","Delaware":"DE","DistrictofColumbia":"DC","Florida":"FL","Georgia":"GA","Hawaii":"HI","Idaho":"ID","Illinois":"IL","Indiana":"IN","Iowa":"IA","Kansas":"KS","Kentucky":"KY","Louisiana":"LA","Maine":"ME","Maryland":"MD","Massachusetts":"MA","Michigan":"MI","Minnesota":"MN","Mississippi":"MS","Missouri":"MO","Montana":"MT","Nebraska":"NE","Nevada":"NV","NewHampshire":"NH","NewJersey":"NJ","NewMexico":"NM","NewYork":"NY","NorthCarolina":"NC","NorthDakota":"ND","Ohio":"OH","Oklahoma":"OK","Oregon":"OR","Pennsylvania":"PA","RhodeIsland":"RI","SouthCarolina":"SC","SouthDakota":"SD","Tennessee":"TN","Texas":"TX","Utah":"UT","Vermont":"VT","Virginia":"VA","Washington":"WA","WestVirginia":"WV","Wisconsin":"WI","Wyoming":"WY"};
+
+
+const stateAbbreviation = states[userStateDropdownSelection];
+console.log(stateAbbreviation);
+
+console.group('Outside AJAX');
+// console.log(getStateFullName);
+console.log(userStateDropdownSelection);
+console.groupEnd();
+
+var queryURL = "https://api.openbrewerydb.org/breweries?by_name=" + userBrandSearchInput + "&by_state=" + userStateDropdownSelection + "&sort=+name&per_page=15";
 
 $.ajax({
     url: queryURL,
@@ -223,7 +232,61 @@ $.ajax({
     console.group('Inside AJAX');
     console.log('ya got me');
     console.log('State selected: ' + userStateDropdownSelection);
+    console.log('Brand selected: ' + userBrandSearchInput);
+    console.log(response);
+    console.log(response[0].name);
     console.groupEnd();
+
+
+    for (let i = 0; i < response.length; i++) {
+    
+        var responseDiv = $('<div class="responseContainer">');
+        
+        // Create variables to store results of ajax call
+        var responseBreweryName = response[i].name;
+
+        var responseBreweryStreet = response[i].street;
+        
+        var responseBreweryCity = response[i].city;
+
+        var responseBreweryState = response[i].state;
+
+        var responseBreweryType = response[i].brewery_type;
+
+        // Create new p tag elements with text property 
+        
+        // var pResponseBreweryName = $('<p class="breweryName">').text('Brewery Name: ' + pResponseBreweryName);
+        // console.log(pResponseBreweryName);
+        var pResponseBreweryName = $('<p class="pbreweryName">').text('Brewery Name: ' + responseBreweryName);
+        
+        var pResponseBreweryStreet = $('<p class="pBreweryStreet">').text('Brewery Street: ' + responseBreweryStreet);
+        
+        var pResponseBreweryCity = $('<p class="pBreweryCity">').text('Brewery City: ' + responseBreweryCity);
+        
+        var pResponseBreweryState = $('<p class="pBreweryState">').text('Brewery State: ' + responseBreweryState);
+        
+        var pResponseBreweryType = $('<p class="pBreweryType">').text('Brewery Type: ' + responseBreweryType);
+        
+        // Append p tag with text and ajax call data
+        responseDiv.append(pResponseBreweryName);
+        
+        responseDiv.append(pResponseBreweryStreet);
+        
+        responseDiv.append(pResponseBreweryCity);
+        
+        responseDiv.append(pResponseBreweryState);
+
+        responseDiv.append(pResponseBreweryType);
+        
+        $('.ajaxResultsDiv').append(responseDiv);
+    }
+        
+    console.log(pResponseBreweryName);
+    console.log(pResponseBreweryStreet);
+    console.log(pResponseBreweryCity);
+    console.log(pResponseBreweryState);
 
     })
 });
+
+
