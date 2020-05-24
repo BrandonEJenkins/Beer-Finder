@@ -15,15 +15,26 @@ footer {
   position: relative;
 }
 
+ul,
+.top-bar {
+  background-color: #f1faee !important;
+}
+
 .results-section {
   background-color: #f1faee;
 }
 h4,
 .card {
-  border-radius: 4px;
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
 }
-
+.card {
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.card-divider {
+  background: #f1faee;
+}
 .input-area,
 .nearme-btn,
 .state-btn,
