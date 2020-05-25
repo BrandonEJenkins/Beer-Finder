@@ -1,11 +1,20 @@
 /* font-family: 'Quicksand', sans-serif; */
+.hero-image {
+  background-image: url("https://www.beerandpop.com/images/beerheader.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: auto;
+  opacity: 60%;
+}
 
 header {
-  background-color: #01785b;
+  background-color: #f1faee;
 }
 
 footer {
-  background-color: #01785b;
+  background-color: #72612b;
   color: #f1faee;
   bottom: 0;
   text-align: center;
@@ -17,11 +26,11 @@ footer {
 
 ul,
 .top-bar {
-  background-color: #f1faee !important;
+  background-color: #ece4b3ec !important;
 }
 
 .results-section {
-  background-color: #f1faee;
+  background-color: #ece4b3ec;
 }
 h4,
 .card {
@@ -33,7 +42,10 @@ h4,
   text-align: left;
 }
 .card-divider {
-  background: #f1faee;
+  background-color: #ece4b3ec;
+}
+.car-section {
+  background-image: url("images/");
 }
 .input-area,
 .nearme-btn,
@@ -47,17 +59,17 @@ h4,
 .nearme-btn,
 .state-btn {
   margin-left: 16px;
-  background-color: #00a896;
+  background-color: #72612b;
   color: #f1faee;
 }
 .brand-btn {
-  background-color: #00a896;
+  background-color: #72612b;
   color: #f1faee;
 }
 .brand-btn:hover,
 .nearme-btn:hover,
 .state-btn:hover {
-  background-color: #02c39a;
+  background-color: #967a1fbd;
   color: #f1faee;
   border-color: black;
 }
@@ -65,7 +77,7 @@ h4,
 .brand-btn:focus,
 .nearme-btn:focus,
 .state-btn:focus {
-  background-color: #02c39a;
+  background-color: #967a1fbd;
 }
 
 .state-info {

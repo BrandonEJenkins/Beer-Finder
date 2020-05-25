@@ -18,7 +18,7 @@
     
   </head>
   <body>
-    <header class="grid-container fluid">
+    <header class="grid-container fluid hero-image">
       <div class="grid-x logo-area" style="height: 200px;">
         <div class="test"><img
               style="
@@ -38,8 +38,8 @@
             <li><input type="search" class="input-area" placeholder="Search By Brand"></li>
             <li><button type="button" class="button brand-btn"><i class="fi-magnifying-glass"> </i></button></li>
             <li><button type="button" class="button nearme-btn"> Near Me <i class="fi-marker"></i></button></li>
-             <li><label for="inputState"></label><select id="inputState" class="state-btn"><option selected>Search By State</option>
-            <option>Alabama</option>
+             <li><select id="inputState" class="state-btn"><option value=""disabled selected>Choose By State</option>
+                            <option>Alabama</option>
                             <option>Alaska</option>
                             <option>Arizona</option>
                             <option>Arkansas</option>
@@ -89,7 +89,9 @@
                             <option>Washington</option>
                             <option>West Virginia</option>
                             <option>Wisconsin</option>
-                            <option>Wyoming</option></select> </li>
+                            <option>Wyoming</option>
+                          </select> 
+                        </li>
              
           </ul>
         </div>
@@ -117,7 +119,7 @@
             </div>
           </div>
           
-         <div class="cell large-6 small-9">
+         <div class="cell large-6 medium-6 small-9">
           <div style="width: 200px;">
             <div id="state-info">
               <h4
