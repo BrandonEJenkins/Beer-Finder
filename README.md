@@ -39,10 +39,9 @@ Features:\
 User profile creation\
  User can provide list of beer types, brands, etc., that they've tasted before
 
-## Credits
-
 ## License
 
 ## Credits
 
 For State Silhouttes: https://silhouettegarden.com/
+For Header Image: https://beerandpop.com
