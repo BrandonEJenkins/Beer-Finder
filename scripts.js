@@ -10,10 +10,65 @@
 
 $( document ).ready(function () { 
 
+
+    // MODAL WINDOW SCRIPT
+
+    // Toggle Modal: script to open modal window
+    // const openEls = document.querySelector("[data-open]");
+    // const isVisible = "is-visible";
+
+    // for(const el of openEls) {
+    //     el.addEventListener("click", function() {
+    //         const modalId = this.dataset.open;
+    //         document.getElementById(modalId).classList.add(isVisible);
+    //     })
+    // }
+
+    // Script to close modal by clicking element within the modal
+    // const closeEls = document.querySelectorAll("[data-close]");
+    // const isVisible = "is-visible";
+
+    // for (const el of closeEls) {
+    //     el.addEventListener("click", function() {
+    //         this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+    //     });
+    // }
+
+    // Script to close modal by clicking everything outside of the modal
+    // const isVisible = "is-visible";
+
+    // document.addEventListener("click", e => {
+    //     if (e.target == document.querySelector(".modal.is-visible")) {
+    //         document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    //     }
+    // });
+
+    // Script to close modal by pressing the Esc key
+    // const isVisible = "is-visible";
+
+    // document.addEventListener("keyup", e => {
+    //     if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
+    //         document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    //     }
+    // });
+
+
+    // PAGE SCRIPTS
+
     // Declare variables to be assigned later to enable global scope
     var userStateDropdownSelection;
 
     var userBrandSearchInput;
+
+    var responseBreweryLongitude;
+
+    var responseBreweryLatitude;
+
+    var responseBreweryStreet;
+
+    var responseBreweryCity;
+
+    var responseBreweryState;
 
     // Get last state selected in drop down menu from local storage
     var stateLocalStorage = window.localStorage.getItem("userStateDropdownSelection");
@@ -24,6 +79,7 @@ $( document ).ready(function () {
     userBrandSearchInput = brandLocalStorage;
 
     getbreweryDetails();
+    // getGooglePlaces();
 
     // When .searchButton clicked run ajax call
     $('.searchButton').click(function (event) {
@@ -32,7 +88,7 @@ $( document ).ready(function () {
         event.preventDefault();
 
         // DELETE - print msg to console
-        console.log('i was clicked');
+        // console.log('i was clicked');
 
         // Clear previous results from search results when button clicked
         $('.ajaxResultsDiv').empty();
@@ -51,10 +107,11 @@ $( document ).ready(function () {
         window.localStorage.setItem("userBrandSearchInput", userBrandSearchInput);
 
         // DELETE BLOCK - Console log some stuff
-        console.log(userBrandSearchInput);
-        console.log(userBrandSearchInput);
+        // console.log(userBrandSearchInput);
+        // console.log(userBrandSearchInput);
 
         getbreweryDetails();
+        // getGooglePlaces();
 
     });
 
@@ -69,10 +126,10 @@ $( document ).ready(function () {
         const stateAbbreviation = states[userStateDropdownSelection];
 
         // DELETE BLOCK - Console log some stuff;
-        console.log(stateAbbreviation);
-        console.group('Outside AJAX');
-        console.log(userStateDropdownSelection);
-        console.groupEnd();
+        // console.log(stateAbbreviation);
+        // console.group('Outside AJAX');
+        // console.log(userStateDropdownSelection);
+        // console.groupEnd();
     
         // Store url for first ajax call using text area from brand search and state from dropdown menu
         // Search response sorted by name and limited to 15 results
@@ -84,13 +141,13 @@ $( document ).ready(function () {
         }).then(function (response) {
 
             // DELETE BLOCK - Console log some stuff;
-            console.group('Inside AJAX');
-            console.log('ya got me');
-            console.log('State selected: ' + userStateDropdownSelection);
-            console.log('Brand selected: ' + userBrandSearchInput);
-            console.log(response);
-            console.log(response[0].name);
-            console.groupEnd();
+            // console.group('Inside AJAX');
+            // console.log('ya got me');
+            // console.log('State selected: ' + userStateDropdownSelection);
+            // console.log('Brand selected: ' + userBrandSearchInput);
+            // console.log(response);
+            // console.log(response[0].name);
+            // console.groupEnd();
 
             // Create for loop to grab response data and create html p tag and div elements for each item in the response array
             for (let i = 0; i < response.length; i++) {
@@ -101,13 +158,18 @@ $( document ).ready(function () {
                 // Create variables to store results of ajax call
                 var responseBreweryName = response[i].name;
 
-                var responseBreweryStreet = response[i].street;
+                responseBreweryStreet = response[i].street;
 
-                var responseBreweryCity = response[i].city;
+                responseBreweryCity = response[i].city;
 
-                var responseBreweryState = response[i].state;
+                responseBreweryState = response[i].state;
 
                 var responseBreweryType = response[i].brewery_type;
+
+                // Define lat and long of brewery to be used in google api
+                responseBreweryLongitude = response[i].longitude;
+
+                responseBreweryLatitude = response[i].latitude;
 
                 // Create new p tag elements with text property and on div element 
                 var pResponseBreweryName = $('<p class="pbreweryName">').text('Brewery Name: ' + responseBreweryName);
@@ -147,13 +209,77 @@ $( document ).ready(function () {
             }
 
             // DELETE BLOCK - Console log some stuff
-            console.log(pResponseBreweryName);
-            console.log(pResponseBreweryStreet);
-            console.log(pResponseBreweryCity);
-            console.log(pResponseBreweryState);
+            // console.log(pResponseBreweryName);
+            // console.log(pResponseBreweryStreet);
+            // console.log(pResponseBreweryCity);
+            // console.log(pResponseBreweryState);
+
+            getCovidReport();
 
         })
 
     }
+
+
+    function getCovidReport() {
+
+        console.log(responseBreweryState);
+
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://covid-19-statistics.p.rapidapi.com/reports?region_province=" + responseBreweryState + "&iso=USA&region_name=US&city_name=" + responseBreweryCity + "&q=US%20" + responseBreweryState,
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "covid-19-statistics.p.rapidapi.com",
+                "x-rapidapi-key": "aa9315e3c9msh7e70db338b431dbp1dae55jsn19c615063e3f"
+            }
+        }
+        
+        $.ajax(settings).done(function (response) {
+            console.group('Covid API');
+            // console.log(responseBreweryCity);
+            // console.log(responseBreweryState);
+            console.log(response);
+            console.groupEnd();
+        });
+
+        
+    }
+        
+    getCovidReport();
+
+
+    // function getGooglePlaces() {
+
+    //     var apiKey = "AIzaSyABkOG8LIN8IQlmFWua5RTO5AABAM6ivxk";
+
+        
+
+    //     $.get()
+
+
+    //     // DELETE BLOCK - Console log some stuff;
+    //     // console.group('Outside GOOGLE AJAX');
+    //     // console.groupEnd();
+
+    //     // var apiKey = "AIzaSyABkOG8LIN8IQlmFWua5RTO5AABAM6ivxk";
+
+    //     // var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+near+" + responseBreweryStreet + "," + responseBreweryState + "&key=" + apiKey;
+
+    //     // $.ajax({
+    //     //     url: queryURL,
+    //     //     method: 'GET',
+    //     // }).then(function (response) {
+
+    //     //     // DELETE BLOCK - Console log some stuff;
+    //     //     console.group('Inside GOOGLE AJAX')
+    //     //     console.log(response.results[0].name);
+
+    //     // })
+
+    // }
+
 
 });
