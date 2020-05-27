@@ -4,171 +4,140 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Hops Spots|The Brewery Finder</title>
-    
+    <title>Brew Finder | The Brewery Finder</title>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/style.css" />
-  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css"
+    />
   </head>
   <body>
-    <header class="grid-container fluid hero-image">
-      <div class="grid-x logo-area" style="height: 200px;">
-        <div class="test"><img src="images/beer-logo.png"
-              style="
-                width: 200px;
-                height: 200px;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 2px;
-                padding-top: 15px;
-              "
-            
-            /></div>
-      </header>
-<div class="cell large-6 medium-6 small-12">
-      <div class="top-bar" id= "search-options">
-        <div class="top-bar-left">
-          <ul class="menu">
-            <li><input type="search" class="input-area" placeholder="Search By Brand"></li>
-            <li><button type="button" class="button brand-btn"><i class="fi-magnifying-glass"> </i></button></li>
-            <li><button type="button" class="button nearme-btn"> Near Me <i class="fi-marker"></i></button></li>
-             <li><select id="inputState" class="state-btn"><option value=""disabled selected>Choose By State</option>
-                            <option>Alabama</option>
-                            <option>Alaska</option>
-                            <option>Arizona</option>
-                            <option>Arkansas</option>
-                            <option>California</option>
-                            <option>Colorado</option>
-                            <option>Connecticut</option>
-                            <option>Delaware</option>
-                            <option>District of Columbia</option>
-                            <option>Florida</option>
-                            <option>Georgia</option>
-                            <option>Hawaii</option>
-                            <option>Idaho</option>
-                            <option>Illinois</option>
-                            <option>Indiana</option>
-                            <option>Iowa</option>
-                            <option>Kansas</option>
-                            <option>Kentucky</option>
-                            <option>Louisiana</option>
-                            <option>Maine</option>
-                            <option>Maryland</option>
-                            <option>Massachusetts</option>
-                            <option>Michigan</option>
-                            <option>Minnesota</option>
-                            <option>Mississippi</option>
-                            <option>Missouri</option>
-                            <option>Montana</option>
-                            <option>Nebraska</option>
-                            <option>Nevada</option>
-                            <option>New Hampshire</option>
-                            <option>New Jersey</option>
-                            <option>New Mexico</option>
-                            <option>New York</option>
-                            <option>North Carolina</option>
-                            <option>North Dakota</option>
-                            <option>Ohio</option>
-                            <option>Oklahoma</option>
-                            <option>Oregon</option>
-                            <option>Pennsylvania</option>
-                            <option>Rhode Island</option>
-                            <option>SouthCarolina</option>
-                            <option>South Dakota</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Utah</option>
-                            <option>Vermont</option>
-                            <option>Virginia</option>
-                            <option>Washington</option>
-                            <option>West Virginia</option>
-                            <option>Wisconsin</option>
-                            <option>Wyoming</option>
-                          </select> 
-                        </li>
-             
+    <header class="container">
+      <div id="logo" class="columns small-12 medium-3"></div>
+      <div id="header-img" class="row">
+        <img src="https://www.beerandpop.com/images/beerheader.jpg" />
+        <div class="empty"></div>
+        <nav class="columns small-12 medium-6 menu-centered">
+          <ul class="menu align-right">
+            <li>
+              <input
+                type="search"
+                class="input-area"
+                placeholder="Search By Brand"
+              />
+            </li>
+            <li>
+              <button type="button" class="button brand-btn">
+                <i class="fi-magnifying-glass"> </i>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="button nearme-btn">
+                Near Me <i class="fi-marker"></i>
+              </button>
+            </li>
+            <li>
+              <select id="inputState" class="state-btn"
+                ><option value="" disabled selected>Choose By State</option>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>District of Columbia</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Hawaii</option>
+                <option>Idaho</option>
+                <option>Illinois</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Kansas</option>
+                <option>Kentucky</option>
+                <option>Louisiana</option>
+                <option>Maine</option>
+                <option>Maryland</option>
+                <option>Massachusetts</option>
+                <option>Michigan</option>
+                <option>Minnesota</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+                <option>North Carolina</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>Oregon</option>
+                <option>Pennsylvania</option>
+                <option>Rhode Island</option>
+                <option>SouthCarolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Vermont</option>
+                <option>Virginia</option>
+                <option>Washington</option>
+                <option>West Virginia</option>
+                <option>Wisconsin</option>
+                <option>Wyoming</option>
+              </select>
+            </li>
           </ul>
-        </div>
+          <div class="empty"></div>
+        </nav>
       </div>
-</div>
-      
-      <div class="grid-container fluid results-section">
-        <div style="height: 30px;"></div>
-        <div class="grid-x grid-margin-x" style="height: 350px;">
-          
-          
-          
-          <div class="cell large-6 medium-6 small-12">
-            <div class="card" style="width: 250px;">
-              <div class="card-divider" id="beer-info">
-                <h4>Karbach Brewing Co.</h4>
-              </div>
-              <div class="card-section">
-                <h5>Located at:</h5>
-                <div>2032 Karbach Street</div>
-                <div>Houston, Tx 77092</div>
-                <h6>visit site</h6>
-                <div>RATING</div>
-              </div>
+    </header>
+
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+        <main class="cell">
+          <div class="card">
+            <div class="card-divider">
+              <h4>Karbach Brewing Co.</h4>
+            </div>
+            <div class="card-section">
+              <h5>Located at:</h5>
+              <div>2032 Karbach Street</div>
+              <div>Houston, Tx</div>
+              <h6>visit site</h6>
+              <div>RATING</div>
             </div>
           </div>
-          
-         <div class="cell large-6 medium-6 small-12">
-          <div style="width: 200px;">
-            <div id="state-info">
-              <h4
-                style="
-                  margin-right: auto;
-                  margin-left: auto;
-                  text-align: center;
-                "
-              >
-                Texas
-              </h4>
-            </div>
-            <img src="states/texas.png" width="200px" height="200px" class="state-img"             
-
-            />
-        
-          </div>
-        </div>
-        </div> 
-            
-        
-        
-        <div style="height: 50px;"></div>
+        </main>
+        <aside class="cell">
+          <img
+            class="state-info"
+            src="states/texas.png"
+            width="200px"
+            height="200px"
+          />
+        </aside>
       </div>
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <footer class="grid-container fluid">
-        
-        <div class="cell" >
-          <div class="columns" style="height: 100px;">
-            
-            <p>©All Rights Reserved</p>
-            
-          </div>
-        </div>
-      
-      </footer>
-    
     </div>
-     
+
+    <footer class="row">
+      <span class="footer-text">This is the footer</span>
+    </footer>
   </body>
 </html>

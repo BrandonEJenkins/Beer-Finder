@@ -1,42 +1,21 @@
 /* font-family: 'Quicksand', sans-serif; */
-body {
-  width: 1200px;
-  margin: 0 auto;
-}
-.state-img {
-  filter: opacity(35%);
-}
-header {
-  background-color: #f1faee;
-}
-.hero-image {
-  background-image: url("https://www.beerandpop.com/images/beerheader.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
+
+#header-image {
   background-size: cover;
-  position: relative;
-  overflow: auto;
+}
+.empty {
+  height: 10px;
+  background-color: #ece4b3ec;
+}
+.card {
+  max-width: 250px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 ul,
 .top-bar {
   background-color: #ece4b3ec !important;
-}
-
-.results-section {
-  background-color: #ece4b3ec;
-}
-h4,
-.card {
-  font-family: "Quicksand", Arial, Helvetica, sans-serif;
-}
-.card {
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  text-align: left;
-}
-.card-divider {
-  background-color: #ece4b3ec;
 }
 
 .input-area,
@@ -72,21 +51,31 @@ h4,
   background-color: #967a1fbd;
 }
 
-.state-info {
-  position: fixed;
+@media screen and (min-width: 1281px) {
+  .menu-centered {
+    text-align: right;
+  }
 }
 
-i {
-  font-size: 14px;
+header,
+main,
+aside,
+footer {
+  margin-bottom: 10px;
 }
 
 footer {
-  background-color: #72612b;
-  color: #f1faee;
   bottom: 0;
+  height: 100px;
+  color: #f1faee;
+  background-color: #72612b;
   text-align: center;
   padding-top: 25px;
   font-size: 12px;
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
   position: relative;
+}
+
+.state-info {
+  align-items: flex-end;
 }
