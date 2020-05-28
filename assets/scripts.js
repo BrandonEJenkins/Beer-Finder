@@ -156,7 +156,7 @@ $( document ).ready(function () {
                 // var responseDiv = $('<div class="responseContainer">');
                 var responseDiv = $('<div class="grid-container">');
 
-                var responseDivDimensions = $('<div class="grid-x grid-margin-x small-up-2 medium-up-3">');
+                var responseDivGridDimensions = $('<div class="grid-x grid-margin-x small-up-2 medium-up-3">');
 
                 var responseMainCell = $('<main class="cell">');
 
@@ -166,7 +166,9 @@ $( document ).ready(function () {
 
                 var responseDivCardSection = $('<div class="card-section">');
 
-                
+
+
+
 
                 // Create variables to store results of ajax call
                 var responseBreweryName = response[i].name;
@@ -187,6 +189,8 @@ $( document ).ready(function () {
                 // Create new p tag elements with text property and on div element 
                 var headingResponseBreweryName = $('<h4 class="pbreweryName">').text('Brewery Name: ' + responseBreweryName);
 
+                var headingResponseCardSection = $('<h5 class="cardSectionHeader">').text('Located at:');
+                
                 var pResponseBreweryStreet = $('<p class="pBreweryStreet">').text('Brewery Street: ' + responseBreweryStreet);
 
                 var pResponseBreweryCity = $('<p class="pBreweryCity">').text('Brewery City: ' + responseBreweryCity);
@@ -205,18 +209,42 @@ $( document ).ready(function () {
 
                 responseDivCardDivider.append(headingResponseBreweryName);
 
-                responseDiv.append(headingResponseBreweryName);
+                responseDivCardSection.append(headingResponseCardSection);
 
-                responseDiv.append(pResponseBreweryStreet);
+                responseDivCardSection.append(pResponseBreweryStreet);
 
-                responseDiv.append(pResponseBreweryCity);
+                responseDivCardSection.append(pResponseBreweryCity);
 
-                // Append state name to state div before appending to response div
                 divResponseBreweryState.append(pResponseBreweryState);
 
-                responseDiv.append(divResponseBreweryState);
+                responseDivCardSection.append(divResponseBreweryState);
 
-                responseDiv.append(pResponseBreweryType);
+                responseDivCardSection.append(pResponseBreweryType);
+
+                responseDivCard.append(responseDivCardDivider);
+
+                responseDivCard.append(responseDivCardSection);
+
+                responseMainCell.append(responseDivCard);
+
+                responseDivGridDimensions.append(responseMainCell);
+
+                responseDiv.append(responseDivGridDimensions);
+
+
+
+                // responseDiv.append(headingResponseBreweryName);
+
+                // responseDiv.append(pResponseBreweryStreet);
+
+                // responseDiv.append(pResponseBreweryCity);
+
+                // Append state name to state div before appending to response div
+                // divResponseBreweryState.append(pResponseBreweryState);
+
+                // responseDiv.append(divResponseBreweryState);
+
+                // responseDiv.append(pResponseBreweryType);
 
                 responseDiv.append(newAjaxDivBreak);
 
