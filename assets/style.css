@@ -7,6 +7,7 @@
   height: 10px;
   background-color: #ece4b3ec;
 }
+
 .card {
   max-width: 250px;
   border-radius: 4px;
@@ -57,13 +58,14 @@ ul,
   }
 }
 
-header,
 main,
-aside,
 footer {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
-
+main,
+aside {
+  margin-top: 10px;
+}
 footer {
   bottom: 0;
   height: 100px;
@@ -74,8 +76,4 @@ footer {
   font-size: 12px;
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
   position: relative;
-}
-
-.state-info {
-  align-items: flex-end;
 }
