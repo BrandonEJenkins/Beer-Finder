@@ -4,8 +4,16 @@
   background-size: cover;
 }
 
+body {
+  background-color: whitesmoke;
+}
+
 .grid-x {
-  background-color: #ece4b3ec;
+  background: linear-gradient(
+    180deg,
+    rgba(236, 228, 179, 1) 10%,
+    rgba(114, 97, 43, 1) 100%
+  );
 }
 
 .state-img {
@@ -19,8 +27,14 @@
 }
 
 .empty {
-  height: 10px;
+  height: 15px;
   background-color: #ece4b3ec;
+}
+.grid-container,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
 }
 
 .card {
