@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Finder</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron" style="background-color: black;">
+            <div class="col-lg" style="color: white; font: bold;">
+                <h1>Beer Finder</h1>
+            </div>
+        </div>
+    </div>
+
+    <!--Beer Search-->
+    <div class="container">
+        <div class="form-group">
+            <label for="searchTerm">
+                <h3>Search by City:</h3>
+            </label>
+            <input type="search" class="form-control" id="citySearchField">
+            <button id="beerSearch">Find the Brew</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+        <!--Create Card Grid for Weather Information-->
+        <div class="col-md-12">
+            <div class="card mt-2"></div>
+            <div class="card-body">
+
+                <div class="row row-cols-md-5">
+
+                    <!--Current Weather-->
+                    <!--<div class="col mb-5">
+                        <div class="card">
+                            <div class="card-header-small" style="background-color: lightgrey;">
+                                <h5 class="card-title" style="color: grey; text-align: center;">Different Breweries</h5>
+                            </div>
+                            <div id="breweryInfo"></div>
+                        </div>
+                    </div>-->
+
+                    <!--Brewery Info-->
+                    <div class="col mb-5">
+                        <div class="card">
+                            <div class="card-header-small" style="background-color: lightgrey;">
+                                <h5 class="card-title" style="color: grey; text-align: center;">Brewery Info:</h5>
+                            </div>
+                            <div id="breweryInfo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
