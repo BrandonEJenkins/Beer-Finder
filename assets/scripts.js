@@ -82,7 +82,7 @@ $( document ).ready(function () {
     // getGooglePlaces();
 
     // When .searchButton clicked run ajax call
-    $('.searchButton').click(function (event) {
+    $('.brandBtn').click(function (event) {
 
         // Prevent page refresh if button clicked 
         event.preventDefault();
@@ -153,7 +153,20 @@ $( document ).ready(function () {
             for (let i = 0; i < response.length; i++) {
 
                 // New div to hold response data
-                var responseDiv = $('<div class="responseContainer">');
+                // var responseDiv = $('<div class="responseContainer">');
+                var responseDiv = $('<div class="grid-container">');
+
+                var responseDivDimensions = $('<div class="grid-x grid-margin-x small-up-2 medium-up-3">');
+
+                var responseMainCell = $('<main class="cell">');
+
+                var responseDivCard = $('<div class="card">');
+
+                var responseDivCardDivider = $('<div class="card-divider">');
+
+                var responseDivCardSection = $('<div class="card-section">');
+
+                
 
                 // Create variables to store results of ajax call
                 var responseBreweryName = response[i].name;
@@ -172,7 +185,7 @@ $( document ).ready(function () {
                 responseBreweryLatitude = response[i].latitude;
 
                 // Create new p tag elements with text property and on div element 
-                var pResponseBreweryName = $('<p class="pbreweryName">').text('Brewery Name: ' + responseBreweryName);
+                var headingResponseBreweryName = $('<h4 class="pbreweryName">').text('Brewery Name: ' + responseBreweryName);
 
                 var pResponseBreweryStreet = $('<p class="pBreweryStreet">').text('Brewery Street: ' + responseBreweryStreet);
 
@@ -189,7 +202,10 @@ $( document ).ready(function () {
                 var newAjaxDivBreak = $('<br><hr><br>');
 
                 // Append p tags with text and ajax call data
-                responseDiv.append(pResponseBreweryName);
+
+                responseDivCardDivider.append(headingResponseBreweryName);
+
+                responseDiv.append(headingResponseBreweryName);
 
                 responseDiv.append(pResponseBreweryStreet);
 
