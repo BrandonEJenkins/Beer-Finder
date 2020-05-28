@@ -8,6 +8,16 @@
   background-color: #ece4b3ec;
 }
 
+.state-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .card {
   max-width: 250px;
   border-radius: 4px;
@@ -52,7 +62,7 @@ ul,
   background-color: #967a1fbd;
 }
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 600px) {
   .menu-centered {
     text-align: right;
   }
