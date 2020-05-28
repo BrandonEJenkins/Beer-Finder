@@ -91,7 +91,8 @@ $( document ).ready(function () {
         // console.log('i was clicked');
 
         // Clear previous results from search results when button clicked
-        $('.ajaxResultsDiv').empty();
+        // $('.ajaxResultsDiv').empty();
+        $('.cell').empty();
 
         // Define variable declared earlier to store state text from dropdown menu
         userStateDropdownSelection = $('#inputState option:selected').text();
@@ -149,107 +150,142 @@ $( document ).ready(function () {
             // console.log(response[0].name);
             // console.groupEnd();
 
+            console.log('!!!!');
+            console.log(response);
+            console.log(response.length);
+
+
+
+            var count = 0;
+
+
             // Create for loop to grab response data and create html p tag and div elements for each item in the response array
             for (let i = 0; i < response.length; i++) {
 
                 // New div to hold response data
                 // var responseDiv = $('<div class="responseContainer">');
-                var responseDiv = $('<div class="grid-container">');
-
-                var responseDivGridDimensions = $('<div class="grid-x grid-margin-x small-up-2 medium-up-3">');
-
-                var responseMainCell = $('<main class="cell">');
-
-                var responseDivCard = $('<div class="card">');
-
-                var responseDivCardDivider = $('<div class="card-divider">');
-
-                var responseDivCardSection = $('<div class="card-section">');
-
-
-
-
-
-                // Create variables to store results of ajax call
-                var responseBreweryName = response[i].name;
-
-                responseBreweryStreet = response[i].street;
-
-                responseBreweryCity = response[i].city;
-
-                responseBreweryState = response[i].state;
-
-                var responseBreweryType = response[i].brewery_type;
-
-                // Define lat and long of brewery to be used in google api
-                responseBreweryLongitude = response[i].longitude;
-
-                responseBreweryLatitude = response[i].latitude;
-
-                // Create new p tag elements with text property and on div element 
-                var headingResponseBreweryName = $('<h4 class="pbreweryName">').text('Brewery Name: ' + responseBreweryName);
-
-                var headingResponseCardSection = $('<h5 class="cardSectionHeader">').text('Located at:');
                 
-                var pResponseBreweryStreet = $('<p class="pBreweryStreet">').text('Brewery Street: ' + responseBreweryStreet);
+                // var responseDiv = $('<div class="grid-container">');
 
-                var pResponseBreweryCity = $('<p class="pBreweryCity">').text('Brewery City: ' + responseBreweryCity);
+                // var responseDivGridDimensions = $('<div class="grid-x grid-margin-x small-up-2 medium-up-3">');
 
-                // New div to store state name allowing flexibility in style and position in response div
-                var divResponseBreweryState = $('<div class="divBreweryState">');
+                // var responseMainCell = $('<main class="cell">');
 
-                var pResponseBreweryState = $('<p class="pBreweryState">').text('Brewery State: ' + responseBreweryState);
+                // var responseDivCard = $('<div class="card">');
 
-                var pResponseBreweryType = $('<p class="pBreweryType">').text('Brewery Type: ' + responseBreweryType);
+                // var responseDivCardDivider = $('<div class="card-divider">');
 
-                // Horizontal rule and line break between ajax results div containers
-                var newAjaxDivBreak = $('<br><hr><br>');
-
-                // Append p tags with text and ajax call data
-
-                responseDivCardDivider.append(headingResponseBreweryName);
-
-                responseDivCardSection.append(headingResponseCardSection);
-
-                responseDivCardSection.append(pResponseBreweryStreet);
-
-                responseDivCardSection.append(pResponseBreweryCity);
-
-                divResponseBreweryState.append(pResponseBreweryState);
-
-                responseDivCardSection.append(divResponseBreweryState);
-
-                responseDivCardSection.append(pResponseBreweryType);
-
-                responseDivCard.append(responseDivCardDivider);
-
-                responseDivCard.append(responseDivCardSection);
-
-                responseMainCell.append(responseDivCard);
-
-                responseDivGridDimensions.append(responseMainCell);
-
-                responseDiv.append(responseDivGridDimensions);
+                // var responseDivCardSection = $('<div class="card-section">');
 
 
 
-                // responseDiv.append(headingResponseBreweryName);
 
-                // responseDiv.append(pResponseBreweryStreet);
 
-                // responseDiv.append(pResponseBreweryCity);
+                // // Create variables to store results of ajax call
+                // var responseBreweryName = response[i].name;
 
-                // Append state name to state div before appending to response div
-                // divResponseBreweryState.append(pResponseBreweryState);
+                // console.log(responseBreweryName);
 
-                // responseDiv.append(divResponseBreweryState);
+                // responseBreweryStreet = response[i].street;
 
-                // responseDiv.append(pResponseBreweryType);
+                // responseBreweryCity = response[i].city;
 
-                responseDiv.append(newAjaxDivBreak);
+                // responseBreweryState = response[i].state;
+
+                // var responseBreweryType = response[i].brewery_type;
+
+                // // Define lat and long of brewery to be used in google api
+                // responseBreweryLongitude = response[i].longitude;
+
+                // responseBreweryLatitude = response[i].latitude;
+
+                // // Create new p tag elements with text property and on div element 
+                // // var headingResponseBreweryName = $('<h4 class="pbreweryName">').text('Brewery Name: ' + responseBreweryName);
+                // var headingResponseBreweryName = $('<h4 class="pbreweryName">').text(responseBreweryName);
+
+                // var headingResponseCardSection = $('<h5 class="cardSectionHeader">').text('Located at:');
+                
+                // // var pResponseBreweryStreet = $('<p class="pBreweryStreet">').text('Brewery Street: ' + responseBreweryStreet);
+                // var pResponseBreweryStreet = $('<p class="pBreweryStreet">').text(responseBreweryStreet);
+
+                // // var pResponseBreweryCity = $('<p class="pBreweryCity">').text('Brewery City: ' + responseBreweryCity);
+                // var pResponseBreweryCity = $('<p class="pBreweryCity">').text(responseBreweryCity);
+
+                // // New div to store state name allowing flexibility in style and position in response div
+                // // var pResponseBreweryState = $('<p class="pBreweryState">');
+
+                // // var pResponseBreweryState = $('<p class="pBreweryState">').text('Brewery State: ' + responseBreweryState);
+                // var pResponseBreweryState = $('<p class="pBreweryState">').text(responseBreweryState);
+
+                // // var pResponseBreweryType = $('<p class="pBreweryType">').text('Brewery Type: ' + responseBreweryType);
+                // var pResponseBreweryType = $('<p class="pBreweryType">').text(responseBreweryType);
+
+                // // Horizontal rule and line break between ajax results div containers
+                // // var newAjaxDivBreak = $('<br><hr><br>');
+
+                // // Append p tags with text and ajax call data
+
+                // responseDivCardDivider.append(headingResponseBreweryName);
+
+                // responseDivCardSection.append(headingResponseCardSection);
+
+                // responseDivCardSection.append(pResponseBreweryStreet);
+
+                // responseDivCardSection.append(pResponseBreweryCity);
+
+                // // divResponseBreweryState.append(pResponseBreweryState);
+
+                // responseDivCardSection.append(pResponseBreweryState);
+
+                // responseDivCardSection.append(pResponseBreweryType);
+
+                // responseDivCard.append(responseDivCardDivider);
+
+                // responseDivCard.append(responseDivCardSection);
+
+                // responseMainCell.append(responseDivCard);
+
+                // // responseDivGridDimensions.append(responseMainCell);
+
+                // // responseDiv.append(responseDivGridDimensions);
+
+
+
+                // // responseDiv.append(headingResponseBreweryName);
+
+                // // responseDiv.append(pResponseBreweryStreet);
+
+                // // responseDiv.append(pResponseBreweryCity);
+
+                // // Append state name to state div before appending to response div
+                // // divResponseBreweryState.append(pResponseBreweryState);
+
+                // // responseDiv.append(divResponseBreweryState);
+
+                // // responseDiv.append(pResponseBreweryType);
+
+                // // responseDiv.append(newAjaxDivBreak);
+
+                // console.log(++count);
 
                 // Append response div to exisiting div in browser
-                $('.ajaxResultsDiv').append(responseDiv);
+                // $('.ajaxResultsDiv').append(responseDiv);
+                $('.cell').append(`
+                <div class="card">
+            <div class="card-divider">
+              <h4>${response[i].name}</h4>
+            </div>
+            <div class="card-section">
+              <h5>Located at:</h5>
+              <div>2032 Karbach Street</div>
+              <div>Houston, Tx</div>
+              <h6>visit site</h6>
+              <div>RATING</div>
+            </div>
+          </div>
+ 
+                
+                `);
             }
 
             // DELETE BLOCK - Console log some stuff
