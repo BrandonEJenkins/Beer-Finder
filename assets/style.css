@@ -4,12 +4,8 @@ body {
   margin: 0;
 }
 .bg {
-  background-color: cornsilk;
+  background-color: #e9e7da;
   height: 1000px;
-}
-.empty {
-  height: 10px;
-  background-color: cornsilk;
 }
 
 .stateImg {
@@ -30,16 +26,22 @@ h6 {
   max-width: 250px;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: whitesmoke;
+  background-color: #e9e7da;
+  color: #373f27;
 }
 
 .card-divider {
-  background-color: cornsilk;
+  background-color: #cda34f;
+  color: #373f27;
 }
 
 ul,
 .top-bar {
-  background-color: cornsilk !important;
+  background-color: #cda34f !important;
+}
+.empty {
+  height: 10px;
+  background-color: #cda34f;
 }
 
 .input-area,
@@ -54,25 +56,25 @@ ul,
 .nearmeBtn,
 .stateBtn {
   margin-left: 16px;
-  background-color: #72612b;
-  color: #f1faee;
+  background-color: #e9e7da;
+  color: #373f27;
 }
 .brandBtn {
-  background-color: #72612b;
-  color: #f1faee;
+  background-color: #e9e7da;
+  color: #373f27;
 }
 .brandBtn:hover,
 .nearmeBtn:hover,
 .stateBtn:hover {
-  background-color: #967a1fbd;
-  color: #f1faee;
+  background-color: #636b46;
+  color: #373f27;
   border-color: black;
 }
 
 .brandBtn:focus,
 .nearmeBtn:focus,
 .stateBtn:focus {
-  background-color: #967a1fbd;
+  background-color: #636b46;
 }
 
 main {
@@ -91,7 +93,8 @@ aside {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  background-color: #ece4b3ec;
+  color: #373f27;
+  background-color: #cda34f;
   padding: 2rem;
   width: 100%;
   max-width: none;
