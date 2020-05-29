@@ -7,9 +7,65 @@
 // TODO: create modal window with minimum age of 21 alert
 // TODO: create ajax call for near me button to match brewery CITY to user city using geolocation
 
-
+var data = [
+    {
+        state: "Alabama",
+        list : [
+            "A Deal With The Devil: 4.57",
+            "Arctic Devil Barley Wine: 4.38",
+            "Endless Ending: 4.59",
+            "Berserker Imperial Stout: 4.36",
+            "Citra Bitter Monk: 4.35",
+            "Love Buzz Saison: 4.27",
+            "Sloth - Belgian Style Imperial Stout: 4.35",
+            "Bar Fly: 4.30",
+            "Darkest Hour: 4.22",
+            "Smoked Porter: 4.18"
+         ]
+    },
+    {
+        state: "Alaska",
+        list : [
+            "A Deal With The Devil: 4.57",
+            "Arctic Devil Barley Wine: 4.38",
+            "Endless Ending: 4.59",
+            "Berserker Imperial Stout: 4.36",
+            "Citra Bitter Monk: 4.35",
+            "Love Buzz Saison: 4.27",
+            "Sloth - Belgian Style Imperial Stout: 4.35",
+            "Bar Fly: 4.30",
+            "Darkest Hour: 4.22",
+            "Smoked Porter: 4.18"
+         ]
+    },
+    {
+        state:"Arizona",
+        list: [
+            "White Russian Imperial Stout: 4.38",
+            "DC Mountain Double IPA: 4.35",
+            "Barrel Aged American Presidential Stout: 4.41",
+            "Koffee Kölsch: 4.27",
+            "Tower Station IPA: 4.19",
+            "Sarcosuchus Double IPA: 4.41",
+            "Dragoon IPA: 4.13",
+            "Tombstone Brewing IPA: 4.39",
+            "Candy Bar Milk Stout: 4.23",
+            "Refuge IPA: 4.08"    
+        ]
+    }
+]
 $( document ).ready(function () { 
 
+    $('select').on('change', function() {
+        console.log( this.value, data[this.value]);
+        $("#state").text(data[this.value].state)
+        var listHTML = ""
+        for (let i = 0; i < 10; i++) {
+            listHTML += `<p>${data[this.value].list[i]}</p>`
+        }
+        $("#list").html(listHTML)
+      });
+      
 
     // MODAL WINDOW SCRIPT
 
