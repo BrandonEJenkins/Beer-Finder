@@ -38,17 +38,17 @@
               />
             </li>
             <li>
-              <button type="button" class="button brand-btn">
+              <button type="button" class="button brandBtn">
                 <i class="fi-magnifying-glass"> </i>
               </button>
             </li>
             <li>
-              <button type="button" class="button nearme-btn">
+              <button type="button" class="button nearmeBtn">
                 Near Me <i class="fi-marker"></i>
               </button>
             </li>
             <li>
-              <select id="inputState" class="state-btn"
+              <select id="inputState" class="stateBtn"
                 ><option value="" disabled selected>Choose By State</option>
                 <option>Alabama</option>
                 <option>Alaska</option>
@@ -110,8 +110,8 @@
     </header>
 
     <div class="grid-container">
-      <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-        <main class="cell large-offset-2">
+      <div class="grid-x grid-margin-x small-up-2 medium-up-3 bg">
+        <main class="cell large-offset-1">
           <div class="card">
             <div class="card-divider">
               <h4>Karbach Brewing Co.</h4>
@@ -126,18 +126,20 @@
           </div>
         </main>
         <aside class="cell large-offset-1 medium-offset-2">
-          <img
-            class="state-img"
-            src="states/texas.png"
-            width="200px"
-            height="200px"
-          />
+          <div class="sticky" data-sticky data-margin-top="0">
+            <img
+              class="state-img"
+              src="states/texas.png"
+              width="250px"
+              height="250px"
+            />
+          </div>
         </aside>
       </div>
     </div>
 
-    <footer class="row">
-      <span class="footer-text">This is the footer</span>
+    <footer class="footer row expand collapse">
+      <p>© 2020 Beer Finder All rights reserved.</p>
     </footer>
   </body>
 </html>

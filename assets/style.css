@@ -3,6 +3,10 @@
 #header-image {
   background-size: cover;
 }
+
+.bg {
+  background-color: cornsilk;
+}
 .empty {
   height: 10px;
   background-color: #ece4b3ec;
@@ -13,9 +17,13 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+}
+
+.grid-container,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
 }
 
 .card {
@@ -24,66 +32,67 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.card-divider {
+  background-color: ;
+}
+
 ul,
 .top-bar {
   background-color: #ece4b3ec !important;
 }
 
 .input-area,
-.nearme-btn,
-.state-btn,
-.brand-btn {
+.nearmeBtn,
+.stateBtn,
+.brandBtn {
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
   font-weight: bold;
   border-radius: 4px;
 }
 
-.nearme-btn,
-.state-btn {
+.nearmeBtn,
+.stateBtn {
   margin-left: 16px;
   background-color: #72612b;
   color: #f1faee;
 }
-.brand-btn {
+.brandBtn {
   background-color: #72612b;
   color: #f1faee;
 }
-.brand-btn:hover,
-.nearme-btn:hover,
-.state-btn:hover {
+.brandBtn:hover,
+.nearmeBtn:hover,
+.stateBtn:hover {
   background-color: #967a1fbd;
   color: #f1faee;
   border-color: black;
 }
 
-.brand-btn:focus,
-.nearme-btn:focus,
-.state-btn:focus {
+.brandBtn:focus,
+.nearmeBtn:focus,
+.stateBtn:focus {
   background-color: #967a1fbd;
 }
 
-@media screen and (min-width: 600px) {
-  .menu-centered {
-    text-align: right;
-  }
-}
-
-main,
-footer {
+main {
   margin-bottom: 30px;
 }
 main,
 aside {
   margin-top: 10px;
 }
-footer {
-  bottom: 0;
-  height: 100px;
-  color: #f1faee;
-  background-color: #72612b;
+
+.footer {
+  font-size: small;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  background-color: cornsilk;
+  padding: 2rem;
+  width: 100%;
+  max-width: none;
   text-align: center;
-  padding-top: 25px;
-  font-size: 12px;
-  font-family: "Quicksand", Arial, Helvetica, sans-serif;
-  position: relative;
+  display: inline-block;
 }
