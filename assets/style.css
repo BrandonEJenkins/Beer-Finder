@@ -1,18 +1,18 @@
 /* font-family: 'Quicksand', sans-serif; */
-
-#header-image {
-  background-size: cover;
+body {
+  position: relative;
+  margin: 0;
 }
-
 .bg {
   background-color: cornsilk;
+  height: 1000px;
 }
 .empty {
   height: 10px;
-  background-color: #ece4b3ec;
+  background-color: cornsilk;
 }
 
-.state-img {
+.stateImg {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -30,15 +30,16 @@ h6 {
   max-width: 250px;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: whitesmoke;
 }
 
 .card-divider {
-  background-color: ;
+  background-color: cornsilk;
 }
 
 ul,
 .top-bar {
-  background-color: #ece4b3ec !important;
+  background-color: cornsilk !important;
 }
 
 .input-area,
@@ -83,13 +84,14 @@ aside {
 }
 
 .footer {
+  position: relative;
   font-size: small;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  background-color: cornsilk;
+  background-color: #ece4b3ec;
   padding: 2rem;
   width: 100%;
   max-width: none;
