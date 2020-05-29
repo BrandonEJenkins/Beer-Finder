@@ -15,38 +15,38 @@ $( document ).ready(function () {
     userBrandSearchInput = brandLocalStorage;
 
     getBreweryDetails();
-
-
+    
+    
     $('.brandBtn').click(function (event) {
-
-
+        
+        
         event.preventDefault();
-
+        
         $('.cardDiv').empty();
-
+        
         userStateDropdownSelection = $('#inputState option:selected').text();
         userBrandSearchInput = $('#brandSearchInput').val();
-
+        
         window.localStorage.setItem("userStateDropdownSelection", userStateDropdownSelection);
         window.localStorage.setItem("userBrandSearchInput", userBrandSearchInput);
-
+        
         getBreweryDetails();
-
 
     })
 
-
+    
     function getBreweryDetails() {
-
+        
 
         var queryURL = "https://api.openbrewerydb.org/breweries?by_name=" + userBrandSearchInput + "&by_state=" + userStateDropdownSelection + "&sort=+name&per_page=15";
-
+        
         $.ajax({
             url: queryURL,
             methoed: 'GET',
         }).then(function (response) {
-            
+
             console.log(response.length);
+            console.log(response);
 
             for (let i =0; i < response.length; i++) {
 
@@ -55,10 +55,10 @@ $( document ).ready(function () {
                 responseBreweryState = response[i].state;
 
                 $('.cardDiv').append(`
-
+                
                     <div class="card">
                         <div class="card-divider">
-                            <h4>${response[i].name}</h4>
+                        <h4>${response[i].name}</h4>
                         </div>
 
                         <div class="card-section">
@@ -67,20 +67,18 @@ $( document ).ready(function () {
                             <div>${response[i].city}, ${response[i].state}</div>
                             <div>${response[i].brewery_type}</div>
                             <h6>${response[i].website_url}</h6>
-                        </div>
+
+
+                            </div>
                     </div>
 
                 `);
 
+                getCovidReport();
             }
 
-            console.group('Inside getBreweryDetails function');
-            console.log('Outside of for loop');
-            console.groupEnd();
 
-            getCovidReport();
-
-        })
+        });
 
     }
 
@@ -91,25 +89,28 @@ $( document ).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://covid-19-statistics.p.rapidapi.com/reports?region_province=" + responseBreweryState + "&iso=USA&region_name=US&city_name=" + responseBreweryCity + "&q=US%20" + responseBreweryState,
+            "url": "https://covid-19-statistics.p.rapidapi.com/reports?region_province=" + responseBreweryState + "&iso=USA&region_name=US&city_name=" + responseBreweryCity + "&q=US%20" +responseBreweryState,
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "covid-19-statistics.p.rapidapi.com",
                 "x-rapidapi-key": "aa9315e3c9msh7e70db338b431dbp1dae55jsn19c615063e3f"
             }
         }
-        
+
         $.ajax(settings).done(function (response) {
 
-            console.group('Inside getCovidReport function');
-            console.log(response.length);
             console.log(response);
-            console.groupEnd();
+            console.log(JSON.stringify(response));
+
+
+            $('.cardDiv').append(`
+                <p>No. of confirmed Covid cases in state: ${response.data[0].confirmed}</p>
+            `);
+
 
         });
 
-    }
 
-    getCovidReport();
+    }
 
 });
