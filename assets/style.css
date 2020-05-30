@@ -89,6 +89,13 @@ aside {
   margin-top: 10px;
 }
 
+.covidData {
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  background-color: rgb(170, 78, 78);
+}
+
 footer {
   bottom: 0;
   font-size: small;
