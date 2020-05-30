@@ -8,6 +8,10 @@ body {
   height: 1000px;
 }
 
+.banner-img {
+  opacity: 0.7;
+}
+
 .stateImg {
   display: block;
   margin-left: auto;
