@@ -1,79 +1,116 @@
 /* font-family: 'Quicksand', sans-serif; */
-
-#header-image {
-  background-size: cover;
+body {
+  position: relative;
+  margin: 0;
 }
-.empty {
-  height: 10px;
-  background-color: #ece4b3ec;
+.bg {
+  background-color: #e9e7da;
+  height: 1000px;
+}
+
+.sticky {
+  width: 100%;
+}
+.banner-img {
+  opacity: 0.7;
+}
+
+.stateImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.grid-container,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+}
+.grid-container,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
 }
 
 .card {
   max-width: 250px;
   border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  background-color: #e9e7da;
+  color: #373f27;
+}
+
+.card-divider {
+  background-color: #cda34f;
+  color: #373f27;
 }
 
 ul,
 .top-bar {
-  background-color: #ece4b3ec !important;
+  background-color: #cda34f !important;
+}
+.empty {
+  height: 10px;
+  background-color: #cda34f;
 }
 
 .input-area,
-.nearme-btn,
-.state-btn,
-.brand-btn {
+.nearmeBtn,
+.stateBtn,
+.brandBtn {
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
   font-weight: bold;
   border-radius: 4px;
 }
 
-.nearme-btn,
-.state-btn {
+.nearmeBtn,
+.stateBtn {
   margin-left: 16px;
-  background-color: #72612b;
-  color: #f1faee;
+  background-color: #e9e7da;
+  color: #373f27;
 }
-.brand-btn {
-  background-color: #72612b;
-  color: #f1faee;
+.brandBtn {
+  background-color: #e9e7da;
+  color: #373f27;
 }
-.brand-btn:hover,
-.nearme-btn:hover,
-.state-btn:hover {
-  background-color: #967a1fbd;
-  color: #f1faee;
+.brandBtn:hover,
+.nearmeBtn:hover,
+.stateBtn:hover {
+  background-color: #636b46;
+  color: #373f27;
   border-color: black;
 }
 
-.brand-btn:focus,
-.nearme-btn:focus,
-.state-btn:focus {
-  background-color: #967a1fbd;
+.brandBtn:focus,
+.nearmeBtn:focus,
+.stateBtn:focus {
+  background-color: #636b46;
 }
 
-@media screen and (min-width: 1281px) {
-  .menu-centered {
-    text-align: right;
-  }
-}
-
-main,
-footer {
+main {
   margin-bottom: 30px;
 }
 main,
 aside {
   margin-top: 10px;
 }
-footer {
-  bottom: 0;
-  height: 100px;
-  color: #f1faee;
-  background-color: #72612b;
-  text-align: center;
-  padding-top: 25px;
-  font-size: 12px;
-  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+
+.footer {
   position: relative;
+  font-size: small;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  color: #373f27;
+  background-color: #cda34f;
+  padding: 2rem;
+  width: 100%;
+  max-width: none;
+  text-align: center;
+  display: inline-block;
 }
