@@ -1,1 +1,0 @@
-/*      Beer Finder Application JS      */
