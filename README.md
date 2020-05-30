@@ -54,6 +54,7 @@ For Header Image: https://beerandpop.com
 - https://stackoverflow.com/questions/33790210/get-a-state-name-from-abbreviation
 - https://stackoverflow.com/questions/33140417/how-to-fix-div-position-while-scrolling?rq=1
 - https://stackoverflow.com/questions/20785537/google-places-api-returning-only-5-results
+- https://www.beeradvocate.com/
 
 ## License
 <<<<<<< HEAD
