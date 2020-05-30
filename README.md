@@ -43,10 +43,9 @@ User profile creation\
 
 ## Credits
 
-<<<<<<< HEAD
 For State Silhouttes: https://silhouettegarden.com/
 For Header Image: https://beerandpop.com
-=======
+
 ## Sources
 * https://learn.jquery.com/using-jquery-core/faq/how-do-i-get-the-text-value-of-a-selected-option/
 * https://github.com/Microsoft/vscode/issues/38380
@@ -57,4 +56,3 @@ For Header Image: https://beerandpop.com
 
 
 ## License
->>>>>>> bb83bbc502e28c0780c4ac0992e9fac9e0d8caf3

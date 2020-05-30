@@ -20,35 +20,35 @@ ul,
 }
 
 .input-area,
-.nearme-btn,
-.state-btn,
-.brand-btn {
+.nearmeBtn,
+.stateBtn,
+.brandBtn {
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
   font-weight: bold;
   border-radius: 4px;
 }
 
-.nearme-btn,
-.state-btn {
+.nearmeBtn,
+.stateBtn {
   margin-left: 16px;
   background-color: #72612b;
   color: #f1faee;
 }
-.brand-btn {
+.brandBtn {
   background-color: #72612b;
   color: #f1faee;
 }
-.brand-btn:hover,
-.nearme-btn:hover,
-.state-btn:hover {
+.brandBtn:hover,
+.nearmeBtn:hover,
+.stateBtn:hover {
   background-color: #967a1fbd;
   color: #f1faee;
   border-color: black;
 }
 
-.brand-btn:focus,
-.nearme-btn:focus,
-.state-btn:focus {
+.brandBtn:focus,
+.nearmeBtn:focus,
+.stateBtn:focus {
   background-color: #967a1fbd;
 }
 
