@@ -1,16 +1,12 @@
 /* font-family: 'Quicksand', sans-serif; */
+
 body {
-  position: relative;
   margin: 0;
 }
-.bg {
+.grid-x {
   background-color: #e9e7da;
-  height: 1000px;
 }
 
-.sticky {
-  width: 100%;
-}
 .banner-img {
   opacity: 0.7;
 }
@@ -28,15 +24,10 @@ h5,
 h6 {
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
 }
-.grid-container,
-h4,
-h5,
-h6 {
-  font-family: "Quicksand", Arial, Helvetica, sans-serif;
-}
 
 .card {
-  max-width: 250px;
+  max-width: 500px;
+  min-width: 300px;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   background-color: #e9e7da;
@@ -98,8 +89,8 @@ aside {
   margin-top: 10px;
 }
 
-.footer {
-  position: relative;
+footer {
+  bottom: 0;
   font-size: small;
   margin-right: auto;
   margin-left: auto;
@@ -113,4 +104,13 @@ aside {
   max-width: none;
   text-align: center;
   display: inline-block;
+}
+
+@media screen and (max-width: 531px) {
+  aside {
+    order: 1;
+  }
+  main {
+    order: 2;
+  }
 }
