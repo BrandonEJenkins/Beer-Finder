@@ -774,6 +774,27 @@ var stateRatings = [
         ]
     }
 ]
+
+var imgArray = new Array();
+
+imgArray[0] = new Image();
+imgArray[0].src = 'states/alabama.png';
+
+imgArray[1] = new Image();
+imgArray[1].src = 'states/alaska.png';
+
+imgArray[2] = new Image();
+imgArray[2].src = 'states/arizona.png';
+
+imgArray[3] = new Image();
+imgArray[3].src = 'states/arkansas.png';
+
+imgArray[4] = new Image();
+imgArray[4].src = 'states/california.png';
+
+imgArray[5] = new Image();
+imgArray[5].src = 'states/colorado.png';
+
 $( document ).ready(function () { 
 
     $('select').on('change', function() {
@@ -784,8 +805,40 @@ $( document ).ready(function () {
             listHTML += `<p>${stateRatings[this.value].list[i]}</p>`
         }
         $("#list").html(listHTML)
-      });
-      
+    });
+
+    $('select').on('change', function() {
+        console.log( this.value, imgArray[this.value]);
+        $("#statePic").html(imgArray[this.value])
+        
+        var img = document.getElementById("#statePic");
+
+        for(var i = 0;i<imgArray.length;i++) {
+            if(imgArray[i] == img) {
+                if(i == imgArray.length) {
+                    var j = 0;
+                    document.getElementById("#statePic").src = imgArray[j].src;
+                    break;
+                }
+                else
+                    var j = i + 1;
+                    document.getElementById("#statePic").src = imgArray[j].src;
+                    break;
+            }
+        }
+        
+        
+        
+        
+        
+        //var imageDisplay = ""
+        //for (let i = 0; i < 50; i++) {
+        //    document.getElementById("#statePic")
+        //    imageList = `${stateImages[this.value].image[i]}`
+        //}
+        $("#statePic").html(img)
+    });
+
 
     // MODAL WINDOW SCRIPT
 
