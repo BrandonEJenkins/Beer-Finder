@@ -28,6 +28,12 @@ h5,
 h6 {
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
 }
+.grid-container,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+}
 
 .card {
   max-width: 250px;
