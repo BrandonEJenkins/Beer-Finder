@@ -7,7 +7,7 @@
 // TODO: create modal window with minimum age of 21 alert
 // TODO: create ajax call for near me button to match brewery CITY to user city using geolocation
 
-var data = [
+var stateRatings = [
     {
         state: "Alabama",
         list : [
@@ -777,11 +777,11 @@ var data = [
 $( document ).ready(function () { 
 
     $('select').on('change', function() {
-        console.log( this.value, data[this.value]);
-        $("#state").text(data[this.value].state)
+        console.log( this.value, stateRatings[this.value]);
+        $("#state").text(stateRatings[this.value].state)
         var listHTML = ""
         for (let i = 0; i < 10; i++) {
-            listHTML += `<p>${data[this.value].list[i]}</p>`
+            listHTML += `<p>${stateRatings[this.value].list[i]}</p>`
         }
         $("#list").html(listHTML)
       });
