@@ -47,12 +47,27 @@ For State Silhouttes: https://silhouettegarden.com/
 For Header Image: https://beerandpop.com
 
 ## Sources
-* https://learn.jquery.com/using-jquery-core/faq/how-do-i-get-the-text-value-of-a-selected-option/
-* https://github.com/Microsoft/vscode/issues/38380
-* https://stackoverflow.com/questions/46539714/select-all-occurrences-of-selected-word-in-vscode
-* https://stackoverflow.com/questions/33790210/get-a-state-name-from-abbreviation
-* https://stackoverflow.com/questions/33140417/how-to-fix-div-position-while-scrolling?rq=1
-* https://stackoverflow.com/questions/20785537/google-places-api-returning-only-5-results
 
+- https://learn.jquery.com/using-jquery-core/faq/how-do-i-get-the-text-value-of-a-selected-option/
+- https://github.com/Microsoft/vscode/issues/38380
+- https://stackoverflow.com/questions/46539714/select-all-occurrences-of-selected-word-in-vscode
+- https://stackoverflow.com/questions/33790210/get-a-state-name-from-abbreviation
+- https://stackoverflow.com/questions/33140417/how-to-fix-div-position-while-scrolling?rq=1
+- https://stackoverflow.com/questions/20785537/google-places-api-returning-only-5-results
 
 ## License
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+testing change here.
+testing change (pablo)!!
+=======
+
+> > > > > > > bb83bbc502e28c0780c4ac0992e9fac9e0d8caf3
+> > > > > > > 29a8bb038fc53821fbee4195f071ffa6e3b5b221
+> > > > > > > =======
+> > > > > > > cd9328ae745d00a413195af2778c8e00b3463b8c
+>>>>>>> master
