@@ -1059,7 +1059,7 @@ $( document ).ready(function () {
 
 
             $('.covidData').append(`
-                <div>No. of confirmed Covid cases in state: ${response.data[0].confirmed}</div>
+                <div class="covidDiv">No. of confirmed Covid cases in state: ${response.data[0].confirmed}</div>
             `);
 
 
