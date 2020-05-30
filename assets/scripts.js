@@ -970,6 +970,7 @@ $(document).ready(function () {
   $(".stateBtn").change(function (event) {
     event.preventDefault();
     $(".cardDiv").empty();
+    $("covidDiv").empty();
 
     userStateDropdownSelection = $("#inputState option:selected").text();
     userBrandSearchInput = $("#brandSearchInput").val();
@@ -987,6 +988,8 @@ $(document).ready(function () {
     event.preventDefault();
 
     $(".cardDiv").empty();
+
+    $("covidDiv").empty();
 
     userBrandSearchInput = $("#brandSearchInput").val();
 
@@ -1061,9 +1064,17 @@ $(document).ready(function () {
       console.log(response);
       console.log(JSON.stringify(response));
 
-      $(".covidData").append(`
-                <div>No. of confirmed Covid cases in state: ${response.data[0].confirmed}</div>
+    //   if (response.data) {
+
+$(".covidData").append(`
+                <div class="covidDiv">
+                    <p>Confirmed Covid <strong>cases</strong> in state: ${response.data[0].confirmed}</p>
+                    <p>Confirmed Covid <strong>deaths</strong> in state: ${response.data[0].deaths}</p>
+                </div>
             `);
+    //   }
+
+      
     });
   }
 });
