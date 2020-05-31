@@ -1060,10 +1060,6 @@ $(document).ready(function () {
     $.ajax(settings).done(function (response) {
       console.log(response);
       console.log(JSON.stringify(response));
-
-      $(".covidData").append(`
-                <div>No. of confirmed Covid cases in state: ${response.data[0].confirmed}</div>
-            `);
     });
   }
 });
